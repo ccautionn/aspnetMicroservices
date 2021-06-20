@@ -25,7 +25,7 @@ namespace Discount.API.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        [HttpGet("{prodcutName}", Name ="GetDiscount")]
+        [HttpGet("{productName}", Name = "GetDiscount")]
         [ProducesResponseType(typeof(Coupon), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<Coupon>> GetDiscount(string productName)
         {
