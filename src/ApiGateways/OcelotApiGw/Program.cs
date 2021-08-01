@@ -20,6 +20,7 @@ namespace OcelotApiGw
             Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hostCtx, cfg) =>
                 {
+                    Console.WriteLine($"ocelot.{hostCtx.HostingEnvironment.EnvironmentName}.json is loaded as configuration");
                     cfg.AddJsonFile($"ocelot.{hostCtx.HostingEnvironment.EnvironmentName}.json", true, true);
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
