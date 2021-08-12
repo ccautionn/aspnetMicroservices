@@ -12,6 +12,12 @@ namespace AspnetRunBasics
         private readonly ICatalogService _catalogService;
         private readonly IBasketService _basketService;
 
+        public ProductDetailModel(ICatalogService catalogService, IBasketService basketService)
+        {
+            _catalogService = catalogService ?? throw new ArgumentNullException(nameof(catalogService));
+            _basketService = basketService ?? throw new ArgumentNullException(nameof(basketService));
+        }
+
         public CatalogModel Product { get; set; }
 
         [BindProperty]
